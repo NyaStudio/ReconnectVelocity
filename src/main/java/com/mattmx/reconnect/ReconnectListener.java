@@ -77,14 +77,6 @@ public class ReconnectListener {
         }
 
         event.setInitialServer(server);
-
-        if (plugin.getConfig().messageOnReconnect) {
-            plugin.getProxy()
-                .getScheduler()
-                .buildTask(plugin, () -> MessageHelper.sendMessage(player, plugin.getConfig().reconnectMessage))
-                .delay(1, TimeUnit.SECONDS)
-                .schedule();
-        }
     }
 
     @Subscribe
